@@ -1,16 +1,11 @@
 const express = require("express");
 
-const authRoutes = require("./v1/auth.routes");
-const taskRoutes = require("./v1/task.routes");
-const notificationRoutes = require("./v1/notification.routes");
-const projectRoutes = require("./v1/project.routes");
+const v1Routes = require("./v1");
 
 const router = express.Router();
 
-router.use("/auth", authRoutes);
-router.use("/tasks", taskRoutes);
-router.use("/notifications", notificationRoutes);
-router.use("/projects", projectRoutes);
+// mount v1
+router.use("/v1", v1Routes);
 
 module.exports = router;
 
